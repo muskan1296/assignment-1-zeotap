@@ -1,0 +1,51 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rule Engine</title>
+    <!-- Include Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap">
+    <!-- Include Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Include your CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-cogs"></i> Rule Engine</h1>
+        <form id="create-rule-form" class="form-section">
+            <label for="rule"><i class="fas fa-pencil-alt"></i> Create Rule:</label>
+            <input type="text" id="rule" name="rule" placeholder="Enter your rule here..." required>
+            <button type="submit"><i class="fas fa-plus-circle"></i> Create Rule</button>
+        </form>
+
+        <form id="evaluate-rule-form" class="form-section">
+            <div class="form-row">
+                <div class="form-col">
+                    <label for="ast"><i class="fas fa-code"></i> AST (JSON format):</label>
+                    <textarea id="ast" name="ast" placeholder="Paste the AST here..." required></textarea>
+                </div>
+                <div class="form-col">
+                    <label for="data"><i class="fas fa-database"></i> Data (JSON format):</label>
+                    <textarea id="data" name="data" placeholder="Paste the data here..." required></textarea>
+                </div>
+            </div>
+            <button type="submit"><i class="fas fa-play-circle"></i> Evaluate Rule</button>
+        </form>
+
+        <div id="result" class="result-section"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 20px; background-color: rgba(255, 255, 255, 0.8);">
+        <p>&copy; 2023 Rule Engine. All rights reserved.</p>
+    </footer>
+
+    <!-- Include jQuery and your JS file -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
